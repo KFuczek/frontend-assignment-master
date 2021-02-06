@@ -1,0 +1,1 @@
+export const SERVER_ASSRES = 'http://localhost:6010';
