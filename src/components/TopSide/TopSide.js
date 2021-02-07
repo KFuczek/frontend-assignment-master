@@ -1,11 +1,13 @@
 import React from 'react';
 
-const TopSide = () => {
+import SortPanel from '../SortPanel/SortPanel'
+
+const TopSide = ({sortOptions}) => {
 
     return (
-        <div>
-        top
-        </div>
+        <SortPanel
+            sortOptions={sortOptions}
+         />
     );
 }
 

@@ -9,6 +9,7 @@ import TopSide from '../TopSide/TopSide';
 
 const MainPage = () => {
     const [articles, setArticles] = useState(null);
+    const [sortOption, setSortOption] = useState(1)
 
     const getNewdata = (articleType) => {
        const newArticles = getArticleFromServer(articleType);
@@ -17,12 +18,18 @@ const MainPage = () => {
 
     const toogleAricles = (articleType, value) => {
         console.log(articleType, value);
-    } 
+    }
+
+    const sortOptions = (sortOption) => {
+        setSortOption(sortOption)
+    }
 
     return (
         <div className = 'mainPage'>
             <div className = 'topSide'>
-                <TopSide />
+                <TopSide
+                    sortOptions={sortOptions}
+                />
             </div>
             <div className = 'leftSide'>
                 <LeftSide

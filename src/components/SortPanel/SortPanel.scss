@@ -1,0 +1,33 @@
+.sortPanel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 1rem;
+    align-content: space-around;
+    margin-right: 1rem;
+}
+
+.sortLabel {
+    text-decoration: underline;
+}
+
+@mixin arrow {
+    display: block;
+    padding: 0;
+    border: solid 7px transparent;
+    background: transparent;
+    border-bottom-width: 0;
+    cursor: pointer;
+}
+
+.up-arrow {
+    @include arrow;
+    margin-bottom: 5px;
+    border-bottom: solid 13px black;
+}
+
+.down-arrow {
+    @include arrow ;
+    border-top: solid 13px black;
+}
