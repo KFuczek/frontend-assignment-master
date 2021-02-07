@@ -24,6 +24,11 @@ $mobile: 20em;
 }
 
 @mixin mainSide-desktop {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    height: auto;
+    overflow-y: auto;
+    row-gap: 1rem;
     grid-column-start: 2;
     grid-column-end: 7;
     grid-row-start: 2;
@@ -46,6 +51,10 @@ $mobile: 20em;
 }
 
 @mixin mainSide-mobile {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    height: auto;
+    overflow-y: auto;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -53,7 +62,6 @@ $mobile: 20em;
 }
 
 .mainPage {
-
     flex: 1;
     min-height: 10rem;
     box-sizing: border-box;
@@ -80,7 +88,7 @@ $mobile: 20em;
 
     @include mobile {
         grid-template-columns: repeat(2, 1fr);
-        width: 100%;
+        width: 90%;
         height: 90vh;
         .topSide {
             @include topSide-mobile;

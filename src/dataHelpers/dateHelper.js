@@ -53,3 +53,7 @@ const findMostMatchedMonth = (typoMonth) => {
     const month = similarity.bestMatch.target;
     return month;
 }
+
+export const getMonth = (num) => {
+    return months[num];
+}

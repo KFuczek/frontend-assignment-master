@@ -9,8 +9,8 @@ const SortPanel = ({sortOptions}) => {
         <div className='sortPanel'>
             <label className='sortLabel'>{Dictionary.SORT_BY_DATE}</label>
             <div className='sort'>
-                <button className='up-arrow' onClick={() => {sortOptions(1)}} />
-                <button className='down-arrow' onClick={() => {sortOptions(-1)}} />
+                <button className='up-arrow' onClick={() => {sortOptions(-1)}} />
+                <button className='down-arrow' onClick={() => {sortOptions(1)}} />
             </div>
         </div>
     );

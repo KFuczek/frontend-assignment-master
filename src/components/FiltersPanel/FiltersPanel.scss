@@ -1,5 +1,10 @@
 .dataType {
     text-decoration: underline;
+    margin-block-start: 0;
+}
+
+.checkBoxPanel {
+    float: left;
 }
 
 input[type='checkbox'] {

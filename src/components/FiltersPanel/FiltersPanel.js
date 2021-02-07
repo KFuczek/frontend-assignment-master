@@ -19,7 +19,7 @@ const FiltersPanel = ({toogleAricles}) => {
     const createChexboxes = () => {
         return Object.keys(initialState).map((checkbox, index) => {
             return (
-                <div key={checkbox + index} >
+                <div className='checkBoxPanel' key={checkbox + index} >
                     <input type="checkbox" id={checkbox} onChange={checkBoxHandler} checked={checkBoxState[checkbox]} />
                     <label htmlFor={checkbox}> {Dictionary[checkbox]} </label>
                 </div>

@@ -1,0 +1,86 @@
+$mobile: 20em;
+
+@mixin mobile {
+    @media (orientation : portrait) and (min-device-width: #{$mobile}) {
+    @content;
+  }
+}
+@mixin title {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 1rem;
+}
+@mixin date {
+    font-size: 1rem;
+}
+@mixin text {
+    border-style: none; 
+    border-color: Transparent;  
+    resize: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.articlePanel {
+    display: flex;
+    max-height: 150px;
+}
+
+.articleBody {
+    flex: 10 1 70%;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 3fr 1fr;
+    @include mobile {
+        grid-template-rows: 2fr 1fr;
+        grid-template-columns: 1fr;
+    }
+}
+
+textarea { 
+    @include text;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    @include mobile {
+        display: none;
+    }
+}
+
+.date {
+    @include date;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    justify-self: end;
+    @include mobile {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        justify-self: start;
+    }
+}
+
+h1 {
+    @include title;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    @include mobile {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+}
+
+.img {
+    flex: 1 1 30%;
+    max-width: 10rem;
+    max-height: 15rem;
+    margin-right: 1rem;
+}
