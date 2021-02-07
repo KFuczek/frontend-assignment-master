@@ -1,7 +1,6 @@
 import { ServerRoute } from '../constances/routes';
 import { getDatafromHttpRequest } from '../api/api';
 import { parseDate } from './dateHelper';
-import { ArticeleType } from '../constances/article';
 
 export const getArticleFromServer = async (articeType) => {
 
@@ -20,7 +19,7 @@ const createRequest = (articeType) => {
       });
 }
 
-const parseArticleData = (articles) => {
+export const parseArticleData = (articles) => {
     const convertToObject = data => data ?? {};
     const existedArticles = convertToObject(articles);
     const parsedData = parseDate(existedArticles);

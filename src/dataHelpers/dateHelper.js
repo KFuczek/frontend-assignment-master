@@ -39,15 +39,14 @@ const getProperDate = (articles) => {
     return properDateArticles;
 }
 
-
-const changeTypeToDate = (date) => {
+export const changeTypeToDate = (date) => {
     const splitedDate = date.split(' ');
     const mostMatchedMontch = findMostMatchedMonth(splitedDate[1]);
-    const parsedDate = new Date(splitedDate[0] + mostMatchedMontch + splitedDate[2]);
+    const parsedDate = new Date(`${splitedDate[0].slice(0, -1)} ${mostMatchedMontch} ${splitedDate[2]}`);
     return parsedDate;
 }
 
-const findMostMatchedMonth = (typoMonth) => {
+export const findMostMatchedMonth = (typoMonth) => {
     const notCaseSensitiveMonths = months.map(month => month.toLowerCase())
     const similarity = findBestMatch(typoMonth, notCaseSensitiveMonths);
     const month = similarity.bestMatch.target;
