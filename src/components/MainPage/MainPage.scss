@@ -52,10 +52,10 @@ $mobile: 20em;
     flex: 1;
     min-height: 10rem;
     box-sizing: border-box;
-    border: solid 1px black;
+    border: solid 1px rgb(0, 0, 0);
     margin: 10rem 10rem 10rem 10rem;
     display: grid;
-    grid-template-columns: repeat(6, 2fr);
+    grid-template-columns: minmax(50px, max-content) repeat(5, 2fr);
     grid-template-rows: 1fr 10fr;
     grid-gap: 1rem;
     

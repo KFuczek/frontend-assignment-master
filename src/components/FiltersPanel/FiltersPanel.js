@@ -1,15 +1,27 @@
 import React, {useState} from 'react';
 
-const FiltersPanel = () => {
-    const [state, setstate] = useState(initialState)
+import './Filterspanel.scss';
+import {Dictionary} from '../../constances/dictionary';
+import {initialState} from '../../constances/filtersPanel';
 
-    const sss = ['sport', 'fashion'];
+const FiltersPanel = ({toogleAricles}) => {
+    const [checkBoxState, setCheckboxState] = useState(initialState)
+
+    const checkBoxHandler = ({target}) => {
+        const {checked, id} = target;
+        toogleAricles(id, checked);
+        setCheckboxState({
+            ...checkBoxState,
+            [id]: checked
+        });
+    }
+
     const createChexboxes = () => {
-        return sss.map(checkbox => {
+        return Object.keys(initialState).map((checkbox, index) => {
             return (
-                <div>
-                    <input type="checkbox" id={checkbox} checked />
-                    <label htmlFor={checkbox}> {checkbox} </label>
+                <div key={checkbox + index} >
+                    <input type="checkbox" id={checkbox} onChange={checkBoxHandler} checked={checkBoxState[checkbox]} />
+                    <label htmlFor={checkbox}> {Dictionary[checkbox]} </label>
                 </div>
             )
         });
@@ -17,10 +29,10 @@ const FiltersPanel = () => {
 
     const getCheckboxPanel = () => {
         return (
-            <React.Fragment>
-                <p>Choose your monster's features:</p>
+            <>
+                <p className='dataType'>{Dictionary.DATA_SOURCES}</p>
                 {createChexboxes()}
-            </React.Fragment>
+            </>
         );
     }
 

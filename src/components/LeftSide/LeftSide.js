@@ -2,11 +2,13 @@ import React from 'react';
 
 import FiltersPanel from '../FiltersPanel/FiltersPanel';
 
-const LeftSide = () => {
+const LeftSide = ({toogleAricles}) => {
 
     return (
         <div>
-            <FiltersPanel />
+            <FiltersPanel
+                toogleAricles={toogleAricles}
+            />
         </div>
     );
 }

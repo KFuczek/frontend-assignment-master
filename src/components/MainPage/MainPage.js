@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import './MainPage.scss';
 import { getArticleFromServer } from '../../dataHelpers/articleParser';
@@ -8,11 +8,16 @@ import LeftSide from '../LeftSide/LeftSide';
 import TopSide from '../TopSide/TopSide';
 
 const MainPage = () => {
+    const [articles, setArticles] = useState(null);
 
-      const getData = () => {
-            getArticleFromServer(ArticeleType.FASHION);
-            getArticleFromServer(ArticeleType.SPORTS);
-      }
+    const getNewdata = (articleType) => {
+       const newArticles = getArticleFromServer(articleType);
+       setArticles({...articles, [ArticeleType]: newArticles});
+    }
+
+    const toogleAricles = (articleType, value) => {
+        console.log(articleType, value);
+    } 
 
     return (
         <div className = 'mainPage'>
@@ -20,7 +25,9 @@ const MainPage = () => {
                 <TopSide />
             </div>
             <div className = 'leftSide'>
-                <LeftSide />
+                <LeftSide
+                    toogleAricles={toogleAricles}
+                />
             </div>
             <div className = 'mainSide'>
                 <MainSide />

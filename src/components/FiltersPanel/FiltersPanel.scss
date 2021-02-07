@@ -1,0 +1,36 @@
+.dataType {
+    text-decoration: underline;
+}
+
+input[type='checkbox'] {
+    height: 1rem;
+    width: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+}
+
+@mixin inputCheckMark {
+    content: '\2713';
+    display: block;
+    text-align: center;
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+}
+
+
+input[type='checkbox']:checked:before {
+    visibility: visible;
+    @include inputCheckMark;
+}
+
+input[type='checkbox']:before {
+    visibility: hidden;
+    @include inputCheckMark;
+}
