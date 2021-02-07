@@ -1,30 +1,35 @@
 # Schibsted frontend task app
 
-This is a very basic npm project with default webpack setup.
+This is a simple app to display articles.
+You can sort is by date and filter by article's type.
+App is responsive, you can read articles on you mobile.
+App is coded in javascript, sass and it uses react library.
+It works on chrome, firefox and edge ;)
 
-You should use this project as a base for your solution.
-Feel free to modify/extend this with whatever you need.
 
-In case you need some assistance take a look at official webpack docs:
- - [Guides](https://webpack.js.org/guides/) 
- - [Concepts](https://webpack.js.org/concepts/)
 
-Eventually this application will request live data from a real API.
+## How to run
 
-You can find the full description of your assignment in [ASSIGNMENT.md](ASSIGNMENT.md)
+To run project do:
+> `$ npm run dev`
 
-## API Documentation
-Api server can be found in `server.js` file. You should not modify this file, only use it.
+To run the tests do:
+> `$ npm test`
 
-To run the server do:
-> `$ node server.js`
+To buld do:
+> `$ npm run bild`
 
-Server will start listening on port `6010`.
+App listening on localhost on port `3000`.
 
-The server has 2 endpoints:
+Don't forget to run the server.
 
-`/articles/sports` - returns a list of articles from `sport` category
+Bundle size is about 150KB.
 
-`/articles/fashion` - returns a list of articles from `fashion` category
 
-Be aware of backend errors!
+## possible improvements
+
+To better test component it can be added enzeme library.
+If app will grow I would consider redux to better handle state.
+Scroll bar could be stylized to fit to the rest of design.
+Web page could usable by keyboard.
+In future, it could be designing for screen reader compatibility.
