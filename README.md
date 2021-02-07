@@ -19,9 +19,12 @@ To run the tests do:
 To buld do:
 > `$ npm run bild`
 
+To install dependencies do:
+> `$ npm install`
+
 App listening on localhost on port `3000`.
 
-Don't forget to run the server.
+Don't forget to run the server and install npm dependencies.
 
 Bundle size is about 150KB.
 
