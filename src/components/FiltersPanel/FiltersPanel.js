@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 
 import './Filterspanel.scss';
 import {Dictionary} from '../../constances/dictionary';
@@ -44,3 +45,7 @@ const FiltersPanel = ({toogleAricles}) => {
 }
 
 export default FiltersPanel;
+
+FiltersPanel.propTypes = {
+    toogleAricles: PropTypes.func
+}

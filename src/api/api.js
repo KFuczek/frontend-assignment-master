@@ -1,4 +1,3 @@
-
 const makeHTTPRequest = async (request) => {
     const response = await fetch(request);
 

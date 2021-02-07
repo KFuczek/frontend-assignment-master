@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import PropTypes from 'prop-types';
 
 import './MainPage.scss';
 import { getArticleFromServer } from '../../dataHelpers/articleParser';
@@ -46,8 +47,8 @@ const MainPage = () => {
             !isEmpty(value) && setArticles({...articles, [type]: value});
         } else {
             const articlesFromState = {...articles};
-             delete articlesFromState[articleType];
-             setArticles(articlesFromState);
+            delete articlesFromState[articleType];
+            setArticles(articlesFromState);
         }
     }
 
@@ -78,3 +79,7 @@ const MainPage = () => {
 }
 
 export default MainPage;
+
+MainPage.propTypes = {
+    
+};

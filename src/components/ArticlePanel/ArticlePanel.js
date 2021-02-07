@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import './ArticlePanel.scss';
 import { getMonth } from '../../dataHelpers/dateHelper';
@@ -6,7 +7,7 @@ import { getMonth } from '../../dataHelpers/dateHelper';
 const ArticlePanel = ({articles}) => {
 
     const getDateInFormat = (date) => {
-        const month = getMonth(date.getMonth()).substr(0, 3);
+        const month = getMonth(date?.getMonth()).substr(0, 3);
         return `${date.getDate()}. ${month} ${date.getFullYear()}`
     }
     const getArticle = () => {
@@ -30,3 +31,7 @@ const ArticlePanel = ({articles}) => {
 }
 
 export default ArticlePanel;
+
+ArticlePanel.propTypes = {
+    articles: PropTypes.array
+}

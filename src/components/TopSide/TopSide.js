@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import SortPanel from '../SortPanel/SortPanel'
 
@@ -12,3 +13,7 @@ const TopSide = ({sortOptions}) => {
 }
 
 export default TopSide;
+
+TopSide.propTypes = {
+    sortOptions: PropTypes.func
+}

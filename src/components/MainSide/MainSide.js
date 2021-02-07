@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import ArticlePanel from '../ArticlePanel/ArticlePanel'
 
@@ -33,3 +34,8 @@ const MainSide = ({sortOption, articles}) => {
 }
 
 export default MainSide;
+
+MainSide.propTypes = {
+    sortOption: PropTypes.number,
+    articles: PropTypes.shape({})
+}

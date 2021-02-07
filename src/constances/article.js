@@ -6,7 +6,7 @@ export const ArticeleType = {
 }
 
 export const defoultArticle = {
-    ERROR:{
+    ERROR: {
         articles: [{
                 category: '',
                 date: new Date(),

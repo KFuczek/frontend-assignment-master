@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import './SortPanel.scss';
 import {Dictionary} from '../../constances/dictionary';
@@ -17,3 +18,7 @@ const SortPanel = ({sortOptions}) => {
 }
 
 export default SortPanel;
+
+SortPanel.propTypes = {
+    sortOptions: PropTypes.func
+}
