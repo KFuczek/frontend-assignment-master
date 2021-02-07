@@ -1,0 +1,89 @@
+$mobile: 20em;
+
+@mixin mobile {
+    @media (orientation : portrait) and (min-device-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin topSide-desktop {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+@mixin leftSide-desktop {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+@mixin mainSide-desktop {
+    grid-column-start: 2;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+@mixin topSide-mobile {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+@mixin leftSide-mobile {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+@mixin mainSide-mobile {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.mainPage {
+    flex: 1;
+    min-height: 10rem;
+    box-sizing: border-box;
+    border: solid 1px black;
+    margin: 10rem 10rem 10rem 10rem;
+    display: grid;
+    grid-template-columns: repeat(6, 2fr);
+    grid-template-rows: 1fr 10fr;
+    grid-gap: 1rem;
+    
+    .topSide {
+        @include topSide-desktop;
+    }
+
+    .leftSide {
+        @include leftSide-desktop;
+    }
+    
+    .mainSide {
+        @include mainSide-desktop;
+    }
+
+    @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 5rem 1rem 5rem 1rem;
+        .topSide {
+            @include topSide-mobile;
+        }
+        
+        .leftSide {
+            @include leftSide-mobile;
+        }
+        
+        .mainSide {
+            @include mainSide-mobile;
+        }
+    }
+}

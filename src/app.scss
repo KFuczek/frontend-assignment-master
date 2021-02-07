@@ -1,6 +1,10 @@
 body {
-    height: 100vh;
-    box-sizing: border-box;
     margin: 0;
     font-family: 'Raleway', sans-serif;
+}
+
+#app {
+    display: flex;
+    height: 100vh;
+    box-sizing: border-box;
 }
